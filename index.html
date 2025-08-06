@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUSHI | Modern Japanese Cuisine</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #f77f00;
+            --primary-dark: #d96e00;
+            --dark: #333333;
+            --light: #ffffff;
+            --gold: #d4af37;
+            --gray: #f5f5f5;
+            --dark-bg: #1a1a2e;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--light);
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(247, 127, 0, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icons a {
+            margin-left: 20px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .header-icons a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        /* Hero Section */
+.hero {
+    height: 100vh;
+    min-height: 600px; /* Tambahkan tinggi minimum */
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between; /* Ini yang akan mengatur jarak antara konten dan gambar */
+    gap: 40px; /* Memberi jarak antara teks dan gambar */
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px; /* Batasi lebar konten */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 100%; /* Sesuaikan dengan parent */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Ini yang akan mendorong gambar ke kanan */
+    align-items: center;
+}
+
+.floating-sushi {
+    max-width: 100%;
+    width: 500px; /* Ukuran tetap untuk gambar */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .floating-sushi {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    .hero-image {
+        justify-content: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .floating-sushi {
+        width: 300px;
+    }
+}
+
+        /* About Section */
+        .about {
+            background-color: var(--gray);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Dishes Section */
+        .dishes .section-title {
+            margin-bottom: 50px;
+        }
+
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .dish-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .dish-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .dish-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dish-card:hover .dish-image img {
+            transform: scale(1.1);
+        }
+
+        .dish-info {
+            padding: 20px;
+        }
+
+        .dish-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .dish-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .dish-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .add-to-cart {
+            background-color: var(--dark);
+            color: var(--light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        /* Special Dish Section */
+        .special-dish {
+            background: linear-gradient(to right, var(--light) 50%, var(--primary) 50%);
+            padding: 0;
+        }
+
+        .special-container {
+            display: flex;
+            min-height: 300px;
+        }
+
+        .special-content {
+            flex: 1;
+            padding: 50px 50px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .special-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .special-content h3 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .special-content p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            max-width: 500px;
+        }
+
+        .special-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .special-sushi {
+            max-width: 500px;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--dark-bg);
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+        }
+
+        .newsletter-container {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form .btn {
+            border-radius: 0 30px 30px 0;
+            padding: 15px 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-about p {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            opacity: 0.7;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--light);
+    padding: 20px; 
+    border-radius: 10px;
+    max-width: 400px; 
+    width: 90%;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+    margin: 10px; 
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px; /* Diperkecil dari 15px */
+    right: 10px; /* Diperkecil dari 15px */
+    font-size: 1.3rem; /* Diperkecil dari 1.5rem */
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--primary);
+}
+
+.modal h2 {
+    margin-bottom: 15px; /* Diperkecil dari 20px */
+    color: var(--dark);
+    font-size: 1.5rem; /* Ukuran font diperkecil */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Diperkecil dari 20px */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px; /* Diperkecil dari 8px */
+    font-weight: 500;
+    font-size: 0.9rem; /* Ukuran font diperkecil */
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px; /* Diperkecil dari 12px 15px */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+    font-size: 0.9rem; /* Ukuran font diperkecil */
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px; /* Diperkecil dari 100px */
+}
+
+/* Tombol submit */
+.modal .btn {
+    padding: 10px 20px; /* Diperkecil dari 12px 30px */
+    font-size: 0.9rem; /* Ukuran font diperkecil */
+}
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .special-content h3 {
+                font-size: 2.5rem;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .special-container {
+                flex-direction: column;
+                background: var(--light);
+            }
+
+            .special-content {
+                padding: 50px 20px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .special-content p {
+                max-width: 100%;
+            }
+
+            .special-sushi {
+                max-width: 300px;
+                margin-top: 30px;
+            }
+
+            .newsletter:before {
+                width: 100%;
+                opacity: 0.1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--light);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+                padding: 100px 0;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .floating-sushi {
+                max-width: 300px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form .btn {
+                border-radius: 30px;
+            }
+
+            .special-content h3 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">SUSHI<span>.</span></a>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#special">Special</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+    <div class="container hero-container"> <!-- Tambahkan class hero-container -->
+        <div class="hero-content fade-in">
+            <h1>Enjoy Delicious </h1>
+            <h1><span style="color: var(--primary);">Sushi</span> Food</h1>
+            <p>Experience the taste of fresh and authentic Japanese cuisine crafted by our master chefs with premium ingredients.</p>
+            <a href="#menu" class="btn">Order Now</a>
+        </div>
+        <div class="hero-image fade-in delay-1">
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sushi Platter" class="floating-sushi">
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container about-container">
+            <div class="about-content fade-in">
+                <h2 class="section-title">We Provide Healthy Food</h2>
+                <p>Founded in 2010, SUSHI. has been serving authentic Japanese cuisine with a modern twist. Our chefs combine traditional techniques with innovative approaches to create unforgettable dining experiences.</p>
+                <p>We source only the freshest ingredients, from sustainable seafood to organic vegetables, ensuring every dish meets our high standards of quality and taste.</p>
+                <a href="#menu" class="btn btn-outline">Explore Menu</a>
+            </div>
+            <div class="about-image fade-in delay-1">
+                <img src="https://images.unsplash.com/photo-1617196034183-421b4917c92d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sushi Roll">
+            </div>
+        </div>
+    </section>
+
+    <!-- Dishes Section -->
+    <section class="section dishes" id="menu">
+        <div class="container">
+            <h2 class="section-title text-center fade-in">Our Popular Dishes</h2>
+            <div class="dishes-grid">
+                <div class="dish-card fade-in">
+                    <div class="dish-image">
+                        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Salmon Sushi">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Salmon Nigiri</h3>
+                        <p>Fresh salmon slices over pressed rice, a classic favorite with perfect balance.</p>
+                        <div class="dish-price">
+                            <span class="price">$12.99</span>
+                            <div class="add-to-cart">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dish-card fade-in delay-1">
+                    <div class="dish-image">
+                        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dragon Roll">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Dragon Roll</h3>
+                        <p>Eel and cucumber inside, topped with avocado and eel sauce.</p>
+                        <div class="dish-price">
+                            <span class="price">$16.99</span>
+                            <div class="add-to-cart">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dish-card fade-in delay-2">
+                    <div class="dish-image">
+                        <img src="https://images.unsplash.com/photo-1628676825875-031ad212c31e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tuna Sashimi">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Tuna Sashimi</h3>
+                        <p>Premium bluefin tuna sliced to perfection, served with wasabi and soy sauce.</p>
+                        <div class="dish-price">
+                            <span class="price">$18.99</span>
+                            <div class="add-to-cart">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Dish Section -->
+    <section class="special-dish" id="special">
+        <div class="container special-container">
+            <div class="special-content fade-in">
+                <h2>Special Offer</h2>
+                <h3>Sushi Samurai Salmon Cheese</h3>
+                <p>Our chef's special creation - fresh salmon, cream cheese, and avocado wrapped in soy paper, topped with spicy mayo and tobiko. Limited time only!</p>
+                <a href="#" class="btn" id="order-special">Order Now</a>
+            </div>
+            <div class="special-image fade-in delay-1">
+                <img src="https://plus.unsplash.com/premium_photo-1668146927669-f2edf6e86f6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Special Sushi" class="special-sushi">
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter">
+        <div class="container newsletter-container">
+            <h2 class="fade-in">Subscribe To Our Newsletter</h2>
+            <p class="fade-in delay-1">Stay updated with our latest offers, new menu items, and special events.</p>
+            <form class="newsletter-form fade-in delay-2">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">SUSHI<span>.</span></div>
+                    <p>Bringing authentic Japanese flavors with a modern twist to your table since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#special">Special Offers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="#">Sushi</a></li>
+                        <li><a href="#">Sashimi</a></li>
+                        <li><a href="#">Rolls</a></li>
+                        <li><a href="#">Appetizers</a></li>
+                        <li><a href="#">Desserts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Sushi Street, Tokyo</p>
+                    <p><i class="fas fa-phone"></i> +62 857 9805 1625</p>
+                    <p><i class="fas fa-envelope"></i> info@sushi.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sun: 11AM - 10PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 SUSHI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Place Your Order</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="order">Your Order</label>
+                    <textarea id="order" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Special Instructions</label>
+                    <textarea id="notes"></textarea>
+                </div>
+                <button type="submit" class="btn">Complete Order via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Order modal
+        const orderButtons = document.querySelectorAll('#order-special, .add-to-cart');
+        const modal = document.getElementById('order-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const orderForm = document.getElementById('order-form');
+        
+        orderButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // If clicking on a dish card, pre-fill the order field
+                if (button.classList.contains('add-to-cart')) {
+                    const dishName = button.closest('.dish-card').querySelector('h3').textContent;
+                    document.getElementById('order').value = `I'd like to order: ${dishName}`;
+                } else {
+                    document.getElementById('order').value = "I'd like to order: Sushi Samurai Salmon Cheese";
+                }
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // WhatsApp order submission
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const order = document.getElementById('order').value;
+            const notes = document.getElementById('notes').value;
+            
+            const message = `*New Sushi Order*%0A%0A*Name:* ${name}%0A*Address:* ${address}%0A*Phone:* ${phone}%0A%0A*Order:*%0A${order}%0A%0A*Special Instructions:*%0A${notes || 'None'}`;
+            
+            const whatsappUrl = `https://wa.me/+6285878325997?text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form and close modal
+            orderForm.reset();
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = newsletterForm.querySelector('input');
+            alert(`Thank you for subscribing with ${emailInput.value}! We'll keep you updated.`);
+            emailInput.value = '';
+        });
+    </script>
+</body>
+</html>
