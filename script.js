@@ -32,7 +32,7 @@
                 id: 5,
                 name: "Rainbow Roll",
                 description: "California roll topped with assorted fish and avocado.",
-                price: 75000,
+                price: 135000,
                 image: "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             },
             {
@@ -41,6 +41,20 @@
                 description: "Spicy tuna mixed with chili sauce, cucumber and scallions.",
                 price: 60000,
                 image: "https://images.unsplash.com/photo-1728691192936-096ed468762c?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+             {
+                id: 7,
+                name: "Unagi Mix Roll",
+                description: "Spicy tuna mixed with chili sauce, cucumber and scallions.",
+                price: 135000,
+                image: "https://images.unsplash.com/photo-1625938145312-c18f06f53be0?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+             {
+                id: 8,
+                name: "Shrimp Roll",
+                description: "Spicy tuna mixed with chili sauce, cucumber and scallions.",
+                price: 55000,
+                image: "https://images.unsplash.com/photo-1554502078-ef0fc409efce?q=80&w=1084&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
         ];
 
