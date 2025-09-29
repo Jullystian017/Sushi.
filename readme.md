@@ -1,4 +1,4 @@
-# SUSHI
+# SUSHIGO
 
 **Sushi Web** adalah website sederhana untuk menampilkan menu, informasi, dan layanan pemesanan restoran sushi.  
 Website ini dirancang dengan desain modern, responsif, dan mudah digunakan oleh pengunjung.
